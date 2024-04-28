@@ -461,7 +461,7 @@ static NSImage* get_rel_image(NSImage* img){
   self.movable = YES;
   self.delegate = self;
   self.releasedWhenClosed = NO;
-  self.level = NSFloatingWindowLevel;
+  // self.level = NSFloatingWindowLevel;
   self.movableByWindowBackground = YES;
   self.titlebarAppearsTransparent = true;
 //  self.backgroundColor = NSColor.clearColor;
@@ -610,8 +610,8 @@ static NSImage* get_rel_image(NSImage* img){
 
 - (void)toggleFloat{
   if([self isFullScreen]) return;
-  if(self.level == NSFloatingWindowLevel) self.level = NSNormalWindowLevel;
-  else self.level = NSFloatingWindowLevel;
+  // if(self.level == NSFloatingWindowLevel) self.level = NSNormalWindowLevel;
+  //else self.level = NSFloatingWindowLevel;
 }
 
 - (void)togglePin{
@@ -667,12 +667,12 @@ static NSImage* get_rel_image(NSImage* img){
 - (void)windowDidEnterFullScreen:(NSNotification *)notification{
   pinbutt.hidden = true;
   was_floating = self.level == NSFloatingWindowLevel;
-  self.level = NSNormalWindowLevel;
+  // self.level = NSNormalWindowLevel;
 }
 
 - (void)windowDidExitFullScreen:(NSNotification *)notification{
   pinbutt.hidden = false;
-  if(was_floating) self.level = NSFloatingWindowLevel;
+  //if(was_floating) self.level = NSFloatingWindowLevel;
 }
 
 - (void)togglePlayback{
